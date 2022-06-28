@@ -21,20 +21,20 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/referrals', [App\Http\Controllers\ReferralInviteController::class, 'referralInvite'])->name('referralInvite');
+Route::get('/referrals', [App\Http\Controllers\UserReferralController::class, 'referralInvite'])->name('referralInvite');
 
-Route::post('/referrals', [App\Http\Controllers\ReferralInviteController::class, 'processInvitation'])->name('processInvitation');
+Route::post('/referrals', [App\Http\Controllers\UserReferralController::class, 'processInvitation'])->name('processInvitation');
 
-Route::get('/registration/{referralToken}', [App\Http\Controllers\ReferralInviteController::class, 'registration'])->name('userRegistration');
+Route::get('/registration/{referralToken}', [App\Http\Controllers\UserReferralController::class, 'registration'])->name('userRegistration');
 
 Route::POST('/registration', [\App\Http\Controllers\Auth\RegisterController::class, 'register'])->name('acceptInvitation');
 
-Route::get('/referral_count', [App\Http\Controllers\ReferralInviteController::class, 'referralCount'])->name('referralCount');
+Route::get('/referral_count', [App\Http\Controllers\UserReferralController::class, 'referralCount'])->name('referralCount');
 
-Route::get('/user/referrals', [App\Http\Controllers\ReferralInviteController::class, 'userReferralBoard'])->name('userReferralBoard');
+Route::get('/user/referrals', [App\Http\Controllers\UserReferralController::class, 'userReferralBoard'])->name('userReferralBoard');
 
 Route::group(['middleware' => 'is.admin'], function () {
-    Route::get('/admin/referrals', [App\Http\Controllers\ReferralInviteController::class, 'adminReferralBoard'])->name('adminReferralBoard');
+    Route::get('/admin/referrals', [App\Http\Controllers\UserReferralController::class, 'adminReferralBoard'])->name('adminReferralBoard');
 });
 
 

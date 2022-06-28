@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f8b0cab5-5e60-4fcb-90c8-f4110a7ff1e1" name="Default Changelist" comment="" />
+    <list default="true" id="f8b0cab5-5e60-4fcb-90c8-f4110a7ff1e1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ReferralInviteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserReferralController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/AdminUserSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/AdminUserSeeder.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,6 +32,9 @@
     </option>
     <expand />
     <select />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -145,8 +154,9 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Controllers" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
@@ -176,6 +186,8 @@
       <updated>1656316033678</updated>
       <workItem from="1656316035419" duration="1623000" />
       <workItem from="1656324149072" duration="28308000" />
+      <workItem from="1656413621412" duration="2600000" />
+      <workItem from="1656416657700" duration="462000" />
     </task>
     <servers />
   </component>
@@ -183,10 +195,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="658" y="121" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1656350709847">
+    <state x="117" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1656417108832">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state x="658" y="121" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1656350709847" />
+    <state x="117" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1656417108832" />
     <state x="634" y="319" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1656410147052">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
@@ -199,10 +211,10 @@
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="559" y="317" width="674" height="486" key="find.popup/0.0.1792.1120@0.0.1792.1120" timestamp="1656411271135" />
-    <state x="561" y="251" width="670" height="676" key="search.everywhere.popup" timestamp="1656411547413">
+    <state x="561" y="251" width="670" height="676" key="search.everywhere.popup" timestamp="1656417039369">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state x="561" y="251" width="670" height="676" key="search.everywhere.popup/0.0.1792.1120@0.0.1792.1120" timestamp="1656411547413" />
+    <state x="561" y="251" width="670" height="676" key="search.everywhere.popup/0.0.1792.1120@0.0.1792.1120" timestamp="1656417039369" />
     <state x="561" y="251" width="670" height="676" key="search.everywhere.popup/0.25.1792.1021@0.25.1792.1021" timestamp="1656409324877" />
   </component>
 </project>

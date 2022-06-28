@@ -22,7 +22,7 @@ class AdminUserSeeder extends Seeder
 
         return User::create([
             'name' => 'Admin',
-            'email' => 'indiantiger1234@gmail.com',
+            'email' => 'admin@admin.com',
             'password' => Hash::make('12345678'),
             'unique_referral_code' => $token,
             'is_admin' => 1

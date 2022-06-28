@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 
-class ReferralInviteController extends Controller
+class UserReferralController extends Controller
 {
     public function __construct()
     {
