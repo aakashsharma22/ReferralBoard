@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f8b0cab5-5e60-4fcb-90c8-f4110a7ff1e1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2022_06_27_171111_create_referral_invite_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2022_06_27_171111_create_referral_invite_table.php" afterDir="false" />
-    </list>
+    <list default="true" id="f8b0cab5-5e60-4fcb-90c8-f4110a7ff1e1" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -186,7 +183,7 @@
       <workItem from="1656413621412" duration="2600000" />
       <workItem from="1656416657700" duration="462000" />
       <workItem from="1656417644915" duration="5781000" />
-      <workItem from="1656437134047" duration="88000" />
+      <workItem from="1656437134047" duration="146000" />
     </task>
     <servers />
   </component>

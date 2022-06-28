@@ -36,28 +36,6 @@ class UserReferralController extends Controller
         $emails = $request->input('emails');
         $emails = explode(",", $emails);
 
-        $this->emailValidation($request, $emails, $userId);
-
-        foreach ($emails as $email) {
-            do {
-                $token = Str::random(20);
-            } while (Invite::where('unique_referral_token', $token)->first());
-
-            $invite = Invite::create([
-                'user_id' => $userId,
-                'email' => $email,
-                'status' => 'invitation sent',
-                'unique_referral_token' => $token
-            ]);
-
-            Mail::to($email)->send(new SendInvitation($invite, $user));
-        }
-
-
-        return redirect('/user/referrals')->with('success', 'The invitation has been sent successfully');
-    }
-
-    private function emailValidation(Request $request, $emails,$userId) {
         $validator = Validator::make($request->all(), [
             'emails' => 'emails',
         ]);
@@ -79,6 +57,24 @@ class UserReferralController extends Controller
                 ->withErrors($validator)
                 ->withInput();
         }
+
+        foreach ($emails as $email) {
+            do {
+                $token = Str::random(20);
+            } while (Invite::where('unique_referral_token', $token)->first());
+
+            $invite = Invite::create([
+                'user_id' => $userId,
+                'email' => $email,
+                'status' => 'invitation sent',
+                'unique_referral_token' => $token
+            ]);
+
+            Mail::to($email)->send(new SendInvitation($invite, $user));
+        }
+
+
+        return redirect('/user/referrals')->with('success', 'The invitation has been sent successfully');
     }
 
     public function registration($referralToken)
@@ -103,8 +99,8 @@ class UserReferralController extends Controller
 
     public function adminReferralBoard() {
         $invites = Invite::leftJoin('users', 'invite.user_id', '=', 'users.id')
-                        ->select(DB::raw('users.name as referrer, invite.email as email_referred, DATE_FORMAT(invite.created_at, \'%D %b %Y\'), invite.status'))
-                        ->get();
+            ->select(DB::raw('users.name as referrer, invite.email as email_referred, DATE_FORMAT(invite.created_at, \'%D %b %Y\'), invite.status'))
+            ->get();
         return view('adminReferralBoard', ['invites' => $invites]);
     }
 }
