@@ -15,12 +15,13 @@ class CreateReferralInviteTable extends Migration
     {
         Schema::create('invite', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('email')->unique();
+            $table->string('email');
             $table->string('status');
             $table->unsignedInteger('user_id')->nullable(false);
             $table->index('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->string('unique_referral_token', 20)->unique();
+            $table->unique(['email', 'user_id']);
             $table->timestamps();
         });
     }
