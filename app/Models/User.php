@@ -20,7 +20,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'unique_referral_code',
+        'code',
         'successful_referral',
         'is_admin'
     ];
@@ -52,8 +52,8 @@ class User extends Authenticatable
         return $this->attributes['name'];
     }
 
-    public function getUniqueReferralCode() {
-        return $this->attributes['unique_referral_code'];
+    public function getCode() {
+        return $this->attributes['code'];
     }
 
     public function getSuccessfulReferral() {

@@ -11,14 +11,19 @@ class Invite extends Model
     protected $fillable = [
         'email',
         'status',
-        'user_id'
+        'user_id',
+        'unique_referral_token'
     ];
 
-    private function user() {
-        return $this->belongsTo(User::class, 'user_id', '');
+    public function getUserId() {
+        return $this->attributes['user_id'];
     }
 
-    public function getUser() {
-        return $this->user();
+    public function getUniqueReferralToken() {
+        return $this->attributes['unique_referral_token'];
+    }
+
+    public function getEmail() {
+        return $this->attributes['email'];
     }
 }

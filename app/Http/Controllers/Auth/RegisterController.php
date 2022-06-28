@@ -66,42 +66,34 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $referralToken = session('referralToken');
-        $successfulReferredCount = 0;
-
-        $user = User::where('unique_referral_code', $referralToken)->first();
-
-        //If invited user
-        if(!empty($user)) {
-            $successfulReferredCount = $user->getSuccessfulReferral() + 1;
-
-            $user->update(['successful_referral' => $successfulReferredCount]);
-
-            $invite = Invite::where(['user_id' => $user->id, 'email' => $data['email']])->first();
-
-            //If someone else registered using the token
-            if(empty($invite)) {
-                Invite::create([
-                    'user_id' => $user->getId(),
-                    'email' => $data['email'],
-                    'status' => 'user registered'
-                ]);
-            } else {
-                $invite->update([
-                    'status' => 'user registered'
-                ]);
-            }
-        }
+        $this->updateInvite();
 
         do {
-            $token = Str::random(16);
-        } while (User::where('unique_referral_code', $token)->first());
+            $code = Str::random(12);
+        } while (User::where('code', $code)->first());
 
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'unique_referral_code' => $token
+            'code' => $code
         ]);
+    }
+
+    private function updateInvite() {
+        $referralToken = session('referralToken');
+
+        $invite = Invite::where('unique_referral_token', $referralToken)->first();
+
+        //If invited user
+        if(!empty($invite)) {
+            $user = User::where('id', $invite->getUserId())->first();
+            $successfulReferredCount = $user->getSuccessfulReferral() + 1;
+            $user->update(['successful_referral' => $successfulReferredCount]);
+
+            $invite->update([
+                'status' => 'user registered'
+            ]);
+        }
     }
 }

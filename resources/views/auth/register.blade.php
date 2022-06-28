@@ -29,7 +29,13 @@
                             <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+
+                                @if(!empty($invite) && isset($invite['email']))
+                                    <input readonly id="email" type="email" class="form-control disabled" name="email" value="{{ $invite['email'] }}" required>
+                                @else
+                                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                                @endif
+
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">

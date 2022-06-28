@@ -3,7 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="f8b0cab5-5e60-4fcb-90c8-f4110a7ff1e1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserReferralController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserReferralController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Mail/SendInvitation.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Mail/SendInvitation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Invite.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Invite.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2022_06_27_171111_create_referral_invite_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2022_06_27_171111_create_referral_invite_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/AdminUserSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/AdminUserSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,7 +193,7 @@
       <workItem from="1656324149072" duration="28308000" />
       <workItem from="1656413621412" duration="2600000" />
       <workItem from="1656416657700" duration="462000" />
-      <workItem from="1656417644915" duration="605000" />
+      <workItem from="1656417644915" duration="4957000" />
     </task>
     <servers />
   </component>
@@ -201,22 +209,22 @@
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="634" y="311" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1656417851010" />
-    <state x="634" y="319" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1656410147052">
+    <state x="634" y="319" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1656424408466">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state x="634" y="319" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1656410147052" />
+    <state x="634" y="319" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1656424408466" />
     <state x="635" y="380" key="NewPhpClassDialog" timestamp="1656409248372">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="635" y="380" key="NewPhpClassDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1656409248372" />
-    <state x="559" y="317" width="674" height="486" key="find.popup" timestamp="1656411271135">
+    <state x="559" y="317" width="674" height="486" key="find.popup" timestamp="1656426046120">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state x="559" y="317" width="674" height="486" key="find.popup/0.0.1792.1120@0.0.1792.1120" timestamp="1656411271135" />
-    <state x="561" y="251" width="670" height="676" key="search.everywhere.popup" timestamp="1656417706380">
+    <state x="559" y="317" width="674" height="486" key="find.popup/0.0.1792.1120@0.0.1792.1120" timestamp="1656426046120" />
+    <state x="561" y="251" width="670" height="676" key="search.everywhere.popup" timestamp="1656425491964">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state x="561" y="251" width="670" height="676" key="search.everywhere.popup/0.0.1792.1120@0.0.1792.1120" timestamp="1656417706380" />
+    <state x="561" y="251" width="670" height="676" key="search.everywhere.popup/0.0.1792.1120@0.0.1792.1120" timestamp="1656425491964" />
     <state x="561" y="251" width="670" height="676" key="search.everywhere.popup/0.25.1792.1021@0.25.1792.1021" timestamp="1656409324877" />
   </component>
 </project>

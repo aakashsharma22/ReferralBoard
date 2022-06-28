@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
 
 class UserReferralController extends Controller
 {
@@ -27,16 +28,39 @@ class UserReferralController extends Controller
     public function processInvitation(Request $request) {
         $user = Auth::user();
         $userId = $user->getId();
+
         if($user->getSuccessfulReferral() >= 10) {
             throw new \Exception("You have reached the limit of referral invitation");
         }
 
+        $emails = $request->input('emails');
+        $emails = explode(",", $emails);
+
+        $this->emailValidation($request, $emails, $userId);
+
+        foreach ($emails as $email) {
+            do {
+                $token = Str::random(20);
+            } while (Invite::where('unique_referral_token', $token)->first());
+
+            $invite = Invite::create([
+                'user_id' => $userId,
+                'email' => $email,
+                'status' => 'invitation sent',
+                'unique_referral_token' => $token
+            ]);
+
+            Mail::to($email)->send(new SendInvitation($invite, $user));
+        }
+
+
+        return redirect('/user/referrals')->with('success', 'The invitation has been sent successfully');
+    }
+
+    private function emailValidation(Request $request, $emails,$userId) {
         $validator = Validator::make($request->all(), [
             'emails' => 'emails',
         ]);
-
-        $emails = $request->input('emails');
-        $emails = explode(",", $emails);
 
         $validator->after(function ($validator) use ($request, $emails, $userId) {
             foreach ($emails as $email) {
@@ -55,30 +79,14 @@ class UserReferralController extends Controller
                 ->withErrors($validator)
                 ->withInput();
         }
-
-        foreach ($emails as $email) {
-            Invite::create([
-                'user_id' => $userId,
-                'email' => $email,
-                'status' => 'invitation sent'
-            ]);
-
-            Mail::to($email)->send(new SendInvitation($user));
-        }
-
-
-        return redirect('/user/referrals')->with('success', 'The invitation has been sent successfully');
     }
 
     public function registration($referralToken)
     {
-        $user = User::where('unique_referral_code', $referralToken)->first();
-        if(empty($user)) {
-            throw new \Exception("No user exist with this referral code");
-        }
+        $invite = Invite::where('unique_referral_token', $referralToken)->first();
 
         session(['referralToken' => $referralToken]);
-        return view('auth.register');
+        return view('auth.register', ['invite' => $invite]);
     }
 
     public function referralCount() {

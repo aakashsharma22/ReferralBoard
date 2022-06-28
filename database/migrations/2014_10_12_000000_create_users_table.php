@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('unique_referral_code', 16)->unique();
+            $table->string('code', 12)->unique();
             $table->unsignedBigInteger('successful_referral')->default(0);
             $table->boolean('is_admin')->default(0);
             $table->rememberToken();

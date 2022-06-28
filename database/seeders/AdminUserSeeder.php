@@ -17,14 +17,14 @@ class AdminUserSeeder extends Seeder
     public function run()
     {
         do {
-            $token = Str::random(16);
-        } while (User::where('unique_referral_code', $token)->first());
+            $code = Str::random(12);
+        } while (User::where('code', $code)->first());
 
         return User::create([
             'name' => 'Admin',
             'email' => 'admin@admin.com',
             'password' => Hash::make('12345678'),
-            'unique_referral_code' => $token,
+            'code' => $code,
             'is_admin' => 1
         ]);
     }

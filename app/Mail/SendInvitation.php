@@ -19,9 +19,12 @@ class SendInvitation extends Mailable
      * @return void
      */
 
+    protected $invite;
     protected $user;
-    public function __construct(User $user)
+
+    public function __construct(Invite $invite, User $user)
     {
+        $this->invite = $invite;
         $this->user = $user;
     }
 
@@ -33,7 +36,7 @@ class SendInvitation extends Mailable
     public function build()
     {
         $referrerName = $this->user->getName();
-        $referralToken = $this->user->getUniqueReferralCode();
+        $referralToken = $this->invite->getUniqueReferralToken();
 
         return $this->from(config('app.mail_from_address'), config('app.mail_from_name'))
                     ->subject("$referrerName recommends ContactOut")

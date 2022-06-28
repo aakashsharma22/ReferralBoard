@@ -20,6 +20,7 @@ class CreateReferralInviteTable extends Migration
             $table->unsignedInteger('user_id')->nullable(false);
             $table->index('user_id');
             $table->foreign('user_id')->references('id')->on('users');
+            $table->string('unique_referral_token', 20)->unique();
             $table->timestamps();
         });
     }
