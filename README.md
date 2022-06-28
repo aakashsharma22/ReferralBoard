@@ -24,7 +24,7 @@ We need following packages:
 
 Please follow the below commands
 1. composer install
-2. edit .env (add mail and database configuration details in env)
+2. touch .env (add mail and database configuration details in env)
 3. php artisan key:generate
 4. php artisan optimize
 5. npm install

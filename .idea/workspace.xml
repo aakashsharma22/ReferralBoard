@@ -3,15 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f8b0cab5-5e60-4fcb-90c8-f4110a7ff1e1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserReferralController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserReferralController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Mail/SendInvitation.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Mail/SendInvitation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Invite.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Invite.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2022_06_27_171111_create_referral_invite_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2022_06_27_171111_create_referral_invite_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/AdminUserSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/AdminUserSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,7 +184,7 @@
       <workItem from="1656324149072" duration="28308000" />
       <workItem from="1656413621412" duration="2600000" />
       <workItem from="1656416657700" duration="462000" />
-      <workItem from="1656417644915" duration="4957000" />
+      <workItem from="1656417644915" duration="5641000" />
     </task>
     <servers />
   </component>
